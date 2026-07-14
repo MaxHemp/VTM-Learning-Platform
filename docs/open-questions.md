@@ -11,9 +11,12 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 
 | # | Frage | Warum wichtig | Vorschlag / Stand |
 |---|---|---|---|
-| P1 | Geschäftsmodell: kostenlos, Abo, Einzelkurse, B2B-Lizenzen für Unternehmen? | Bestimmt Architektur (Accounts, Paywall, Mandanten) und Content-Zuschnitt | offen |
-| P2 | Startumfang: mit welcher Rolle / welchem Lernpfad wird pilotiert? | Fokus für Phase 3; nicht alle 10 Rollen gleichzeitig | Vorschlag: eine Rolle mit breitem Alltagsbezug (z. B. Kundenservice oder Schadenmanagement) |
-| P3 | Gibt es Zertifikate oder Abschlussnachweise? Mit welcher Verbindlichkeit? | Beeinflusst Prüfungslogik, Datenhaltung, ggf. IDD-Weiterbildungszeit-Anrechnung | offen; IDD-Anrechnung wäre gesondert zu prüfen — REVIEW ERFORDERLICH: Regulatorik |
+| P1 | ~~Geschäftsmodell~~ | — | **Entschieden 2026-07-14:** Freemium-Abo (siehe unten) |
+| P2 | ~~Startumfang / Pilot-Lernpfad~~ | — | **Entschieden 2026-07-14:** rollenunabhängiger Grundkurs „KI-Führerschein für den Versicherungsalltag“ |
+| P3 | ~~IDD-Anrechnung~~ | — | **Entschieden 2026-07-14:** keine IDD-Anrechnung. Form des Nachweises (Badges/Zertifikat) siehe P7 |
+| P6 | Freemium-Grenze: Welche Inhalte/Funktionen sind kostenlos, welche Premium? | Bestimmt Paywall-Logik, Conversion-Strategie und Content-Zuschnitt | Vorschlag in `docs/product-requirements.md` (Modul 1 + Assessment frei) — ENTSCHEIDUNG AUFTRAGGEBER |
+| P7 | Nachweisform im MVP: nur Badges, nur PDF-Zertifikat, oder beides? | Aufwand Prüfungslogik und PDF-Erzeugung | Vorschlag: Badges je Modul + einfaches PDF-Zertifikat nach Abschlussprüfung — ENTSCHEIDUNG AUFTRAGGEBER |
+| P8 | Preismodell des Premium-Abos (Preis, monatlich/jährlich, Zahlungsanbieter)? | Umsetzung Bezahlstrecke im MVP oder Nachlagerung | offen — ENTSCHEIDUNG AUFTRAGGEBER |
 | P4 | Verhältnis zum VersicherungsTech Magazin: gemeinsame Accounts, Branding, Domain? | Login-Konzept, SEO, redaktionelle Workflows | offen |
 | P5 | Erfolgskriterien und Messgrößen (KPIs) für die Plattform? | Ohne Zielwerte keine Priorisierung | Arbeitsfassung in `docs/project-vision.md`, Zielwerte offen |
 
@@ -80,3 +83,6 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 | 2026-07-14 | Inhalts- und Dokumentationssprache Deutsch; Code und Commits Englisch. | Zielgruppe DACH; Entwickler-Konventionen; siehe `CLAUDE.md` |
 | 2026-07-14 | Nur synthetische Übungsdaten, verbindliche Sicherheitsregeln. | Vorgabe des Herausgebers; siehe `docs/security-and-privacy-rules.md` |
 | 2026-07-14 | Konzeption vor Implementierung: keine App, keine Kurse in Phase 0. | Vorgabe des Herausgebers; siehe `docs/project-vision.md` |
+| 2026-07-14 | Geschäftsmodell: Freemium-Abo. | Entscheidung des Auftraggebers (P1); Details in `docs/product-requirements.md` |
+| 2026-07-14 | Pilotkurs: rollenunabhängiger Grundkurs „KI-Führerschein für den Versicherungsalltag“ (7 Module). | Entscheidung des Auftraggebers (P2); Kursstruktur in `docs/product-requirements.md` |
+| 2026-07-14 | Keine IDD-Weiterbildungszeit-Anrechnung angestrebt. | Entscheidung des Auftraggebers (P3); vereinfacht Prüfungs- und Nachweislogik |
