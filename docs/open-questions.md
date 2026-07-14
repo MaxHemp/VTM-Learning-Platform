@@ -14,7 +14,7 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 | P1 | ~~Geschäftsmodell~~ | — | **Entschieden 2026-07-14:** Freemium-Abo (siehe unten) |
 | P2 | ~~Startumfang / Pilot-Lernpfad~~ | — | **Entschieden 2026-07-14:** rollenunabhängiger Grundkurs „KI-Führerschein für den Versicherungsalltag“ |
 | P3 | ~~IDD-Anrechnung~~ | — | **Entschieden 2026-07-14:** keine IDD-Anrechnung. Form des Nachweises (Badges/Zertifikat) siehe P7 |
-| P6 | Freemium-Grenze: Welche Inhalte/Funktionen sind kostenlos, welche Premium? | Bestimmt Paywall-Logik, Conversion-Strategie und Content-Zuschnitt | Vorschlag in `docs/product-requirements.md` (Modul 1 + Assessment frei) — ENTSCHEIDUNG AUFTRAGGEBER |
+| P6 | ~~Freemium-Grenze~~ | — | **Entschieden 2026-07-14:** Assessment + Modul 1 frei; Module 2–7, Prüfung, Zertifikat Premium (E1 bestätigt) |
 | P7 | Nachweisform im MVP: nur Badges, nur PDF-Zertifikat, oder beides? | Aufwand Prüfungslogik und PDF-Erzeugung | Vorschlag: Badges je Modul + einfaches PDF-Zertifikat nach Abschlussprüfung — ENTSCHEIDUNG AUFTRAGGEBER |
 | P8 | Preismodell des Premium-Abos (Preis, monatlich/jährlich, Zahlungsanbieter)? | Umsetzung Bezahlstrecke im MVP oder Nachlagerung | offen — ENTSCHEIDUNG AUFTRAGGEBER |
 | P4 | Verhältnis zum VersicherungsTech Magazin: gemeinsame Accounts, Branding, Domain? | Login-Konzept, SEO, redaktionelle Workflows | offen |
@@ -44,9 +44,9 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 
 | # | Frage | Warum wichtig | Vorschlag / Stand |
 |---|---|---|---|
-| T1 | Technologie-Stack (Framework, Hosting, ggf. statisch vs. dynamisch)? | Grundsatzentscheidung; als ADR zu dokumentieren | offen — Entscheidung in Phase 2 |
-| T2 | Content-Modell: Markdown + strukturierte Metadaten, Headless CMS, oder eigenes Format? | Kern der Trennung Inhalt/Präsentation/Logik | offen — ADR nötig; Anforderungen: versionierbar, reviewfähig, interaktionsfähig |
-| T3 | Wie werden interaktive Formate (Quiz, verzweigte Simulationen, Entscheidungsbäume) im Content-Modell abgebildet? | Bestimmt Autorenaufwand und Toolauswahl | offen; deklaratives Format (z. B. strukturierte Daten statt Code) anstreben |
+| T1 | Technologie-Stack: Grundsatz-Architektur in ADR-0001 vorgeschlagen (Git-basiert, Variante A) — Bestätigung ausstehend; konkretes Framework/Hosting folgt als ADR-0002 | Grundsatzentscheidung | ADR-0001 zur Bestätigung — ENTSCHEIDUNG AUFTRAGGEBER |
+| T2 | Content-Modell: Grundsatz (Markdown/MDX + schemavalidierte Strukturdaten) in ADR-0001 vorgeschlagen; Detail-Schemata folgen als ADR-0003 | Kern der Trennung Inhalt/Präsentation/Logik | Grundsatz in ADR-0001; Details offen |
+| T3 | Detail-Abbildung der interaktiven Formate (Quiz, Simulationen, Ampel, Prompt-Bausatz) in Schemata | Bestimmt Autorenaufwand | offen — ADR-0003; deklarativ gemäß ADR-0001 |
 | T4 | Accounts und Lernstandsspeicherung: mit Login, anonym, oder beides? | Datenschutzaufwand vs. Lernerlebnis | offen; datensparsamste tragfähige Variante bevorzugen |
 | T5 | Hosting-Standort und Dienstleisterwahl (EU/DACH, AV-Verträge)? | Datenschutz, Drittlandtransfer | offen — REVIEW ERFORDERLICH: Regulatorik |
 | T6 | Analytics/Reichweitenmessung: ob und womit? | Datenschutz, Consent-Management | offen; datensparsame Lösung bevorzugen |
@@ -86,3 +86,7 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 | 2026-07-14 | Geschäftsmodell: Freemium-Abo. | Entscheidung des Auftraggebers (P1); Details in `docs/product-requirements.md` |
 | 2026-07-14 | Pilotkurs: rollenunabhängiger Grundkurs „KI-Führerschein für den Versicherungsalltag“ (7 Module). | Entscheidung des Auftraggebers (P2); Kursstruktur in `docs/product-requirements.md` |
 | 2026-07-14 | Keine IDD-Weiterbildungszeit-Anrechnung angestrebt. | Entscheidung des Auftraggebers (P3); vereinfacht Prüfungs- und Nachweislogik |
+| 2026-07-14 | Freemium-Grenze: Assessment + Modul 1 frei; Rest Premium (E1). | Bestätigung des Auftraggebers; `docs/product-requirements.md` Abschnitt 6 |
+| 2026-07-14 | MVP ohne integrierte Bezahlstrecke: Premium per manueller Freischaltung; Preis/Anbieter später (E2/E2a). | Bestätigung des Auftraggebers; entkoppelt Marktstart von Zahlungsintegration |
+| 2026-07-14 | Prompt-Werkstatt im MVP ohne Live-LLM-Anbindung, regelbasiertes Feedback (E4). | Bestätigung des Auftraggebers; L3 bleibt für Ausbaustufe offen |
+| 2026-07-14 | Redaktions-Workflow Git-basiert, keine eigene Redaktions-UI im MVP (E5). | Bestätigung des Auftraggebers; prägt Architekturentscheidung (ADR-0001) |
