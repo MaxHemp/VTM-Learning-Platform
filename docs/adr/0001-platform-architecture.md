@@ -1,7 +1,7 @@
 # ADR-0001: Plattform-Architektur — Git-basierte Inhalte mit schlanker Anwendungsschicht
 
-**Status:** Vorgeschlagen — **zur Bestätigung durch den Auftraggeber**
-**Datum:** 2026-07-14
+**Status:** **Accepted** (bestätigt durch den Auftraggeber am 2026-07-15)
+**Datum:** 2026-07-14 (vorgeschlagen) · 2026-07-15 (angenommen)
 **Entscheider:** Auftraggeber (VersicherungsTech Magazin) auf Empfehlung
 der Entwicklung
 **Referenzen:** `docs/architecture-options.md` (vollständige Bewertung),
@@ -127,6 +127,49 @@ Kurslogik) wiegt die Nachteile nicht auf, da diese Bausteine klein sind.
   Musterlektion je Format validiert, bevor Kursproduktion startet.
 - *Eigenentwicklung unterschätzt:* Reduktionspfad in `docs/mvp-scope.md`
   §3 ist vereinbart; Minimal-Datenmodell begrenzt die Komplexität.
+
+## Bestätigung durch den Auftraggeber (2026-07-15)
+
+Der Auftraggeber hat am 2026-07-15 entschieden:
+
+> Wir wählen Variante A: Git-basierte Inhalte mit einer schlanken
+> individuellen Anwendungsschicht und PostgreSQL für das minimale
+> Nutzerdatenmodell.
+
+### Mit der Bestätigung verbundene Konsequenzen
+
+- Die Grundsatz-Architektur ist verbindlich; Abweichungen erfordern ein
+  neues ADR mit Begründung.
+- Die Folgeentscheidungen (ADR-0002 Framework/Hosting, ADR-0003
+  Content-Schemata, ADR-0004 Suchtechnik) werden auf dieser Basis
+  erarbeitet; die Suchtechnik wird erst **nach** Definition der
+  Content-Schemata entschieden (Vorgabe des Auftraggebers).
+- Das Nutzerdatenmodell muss über das Minimalprinzip hinaus die
+  Lebenszyklen **Löschung, Anonymisierung, Deaktivierung und
+  Zertifikats-Widerruf** technisch unterstützen (Vorgabe des Auftraggebers
+  aus dem vorläufigen Löschkonzept, siehe
+  `docs/security-and-privacy-rules.md` §5).
+- Mehrsprachigkeit wird technisch vorbereitet (Sprachschlüssel in der
+  Dateikonvention); MVP-Sprache ist ausschließlich Deutsch.
+- Premium-Zugang wird als Berechtigungs-Flag umgesetzt (bestätigt).
+
+### Bewusst akzeptierte Nachteile
+
+Der Auftraggeber akzeptiert mit dieser Entscheidung ausdrücklich:
+
+1. **Redaktionsarbeit in Git:** Autorinnen und Reviewer arbeiten mit
+   Markdown/YAML und Pull Requests; es gibt im MVP keine grafische
+   Redaktionsoberfläche. Abmilderung: Autoren-Handbuch, Vorlagen,
+   PR-Vorschau; Git-basierte Editor-UI als mögliche Ausbaustufe.
+2. **Eigenverantwortung für die Anwendungsschicht:** Konto-, Fortschritts-,
+   Prüfungs- und Zertifikatslogik inkl. deren Sicherheit
+   (Threat Model T1–T10) und Betrieb (Backups, Updates) sind
+   Eigenentwicklung ohne Hersteller-Support.
+3. **Kein fertiges Kurs-Ökosystem:** Jedes neue Übungsformat erfordert
+   Schema- und Komponentenarbeit; es gibt keine Plugin-Landschaft wie bei
+   einem LMS.
+4. **Übersetzungs-Workflows bleiben manuell**, bis eine
+   Mehrsprachigkeits-Ausbaustufe entschieden ist.
 
 ## Folgeentscheidungen (nicht Teil dieses ADR)
 

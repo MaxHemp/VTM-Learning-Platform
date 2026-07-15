@@ -35,8 +35,8 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 
 | # | Frage | Warum wichtig | Vorschlag / Stand |
 |---|---|---|---|
-| R1 | Wer übernimmt das Fachreview je Rolle (Namen/Verantwortliche)? | DoD verlangt Fachreview; ohne Personen kein Prozess | offen |
-| R2 | Wer übernimmt das Regulatorik-Review (intern/extern, Jurist/in)? | Pflicht für alle `REVIEW ERFORDERLICH: Regulatorik`-Inhalte | offen |
+| R1 | Fachreview: konkrete Personen | DoD verlangt Fachreview | **Vorläufig 2026-07-15:** Rollen definiert (Editorial / Insurance SME / Legal-Regulatory / Privacy-Security Reviewer, siehe `security-and-privacy-rules.md` §5.3); Personen noch zu benennen |
+| R2 | Regulatorik-Review: konkrete Person (intern/extern, Jurist/in) | Pflicht für alle `REVIEW ERFORDERLICH: Regulatorik`-Inhalte | **Vorläufig 2026-07-15:** Rolle „Legal/Regulatory Reviewer“ definiert; ohne menschliche Freigabe keine Veröffentlichung kritischer Inhalte; Person noch zu benennen |
 | R3 | Kennzeichnung KI-gestützt erstellter Inhalte gegenüber Lernenden? | Transparenz; ggf. regulatorische Anforderungen an KI-Transparenz | offen — REVIEW ERFORDERLICH: Regulatorik |
 | R4 | Versionierung und Änderungshistorie von Inhalten für Lernende sichtbar? | Vertrauen, Nachvollziehbarkeit von Rechtsstand-Änderungen | offen |
 
@@ -56,8 +56,8 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 
 | # | Frage | Warum wichtig | Vorschlag / Stand |
 |---|---|---|---|
-| L1 | Impressums- und Datenschutzverantwortung (Herausgeber-Rechtsträger)? | Pflichtangaben der Plattform | offen |
-| L2 | Speicher- und Löschfristen für Nutzer- und Lernstandsdaten? | Löschkonzept vor Implementierung nötig | offen — vor Phase 2 klären |
+| L1 | Impressums- und Datenschutzverantwortung (Herausgeber-Rechtsträger)? | Pflichtangaben der Plattform | offen — **Vorläufig 2026-07-15:** blockiert Produktivstart, nicht die Entwicklung; bis dahin klar gekennzeichnete Platzhalter (`security-and-privacy-rules.md` §5.2) |
+| L2 | Speicher- und Löschfristen für Nutzer- und Lernstandsdaten? | Löschkonzept vor Implementierung nötig | **Vorläufig 2026-07-15:** Eckwerte festgelegt (Logs ≤ 14 Tage, Backups ≤ 30 Tage, Inaktivitätsprüfung 24 Monate; `security-and-privacy-rules.md` §5.1) — juristisch zu prüfen vor Produktivstart; Zertifikatsdaten nach Kontolöschung bleibt reviewpflichtig (DF1) |
 | L3 | Nutzung von KI-APIs im Plattformbetrieb (nicht nur als Lerngegenstand): zulässig, welche Anbieter, welche Daten? | AV-Verträge, Drittlandtransfer, Kosten | offen — REVIEW ERFORDERLICH: Regulatorik |
 | L4 | Haftungsausschluss / „keine Rechtsberatung“-Hinweis: Formulierung und Platzierung? | Absicherung bei regulatorischen Inhalten | offen; juristisch prüfen lassen |
 
@@ -90,3 +90,16 @@ Entscheidung und Datum in den Abschnitt „Entschieden“ verschoben.
 | 2026-07-14 | MVP ohne integrierte Bezahlstrecke: Premium per manueller Freischaltung; Preis/Anbieter später (E2/E2a). | Bestätigung des Auftraggebers; entkoppelt Marktstart von Zahlungsintegration |
 | 2026-07-14 | Prompt-Werkstatt im MVP ohne Live-LLM-Anbindung, regelbasiertes Feedback (E4). | Bestätigung des Auftraggebers; L3 bleibt für Ausbaustufe offen |
 | 2026-07-14 | Redaktions-Workflow Git-basiert, keine eigene Redaktions-UI im MVP (E5). | Bestätigung des Auftraggebers; prägt Architekturentscheidung (ADR-0001) |
+| 2026-07-15 | **ADR-0001 bestätigt (Accepted):** Variante A — Git-basierte Inhalte, schlanke Anwendungsschicht, PostgreSQL mit Minimal-Nutzerdatenmodell. | Entscheidung des Auftraggebers; `docs/adr/0001-platform-architecture.md` |
+| 2026-07-15 | Bestehensgrenze Abschlussprüfung: 80 % (E6). | Vorläufige Produktentscheidung des Auftraggebers |
+| 2026-07-15 | Zertifikats-Verifikationslink: ja (E7). | Vorläufige Produktentscheidung des Auftraggebers |
+| 2026-07-15 | Rollenfilter: einfacher Mehrfachfilter im MVP (E9). | Vorläufige Produktentscheidung des Auftraggebers |
+| 2026-07-15 | Vorläufige Subdomain: `akademie.versicherungstech-magazin.de` (T8). | Vorläufige Produktentscheidung des Auftraggebers |
+| 2026-07-15 | Keine nicht notwendige personenbezogene Drittanbieteranalyse im MVP (M-E3). | Vorläufige Produktentscheidung des Auftraggebers |
+| 2026-07-15 | „War das hilfreich?“-Feedback: ja, datensparsam (M-E2). | Vorläufige Produktentscheidung des Auftraggebers |
+| 2026-07-15 | Premium-Zugang über Berechtigungs-Flag; Mehrsprachigkeit technisch vorbereiten; MVP-Sprache Deutsch. | Vorläufige Produktentscheidungen des Auftraggebers; verankert in ADR-0001 |
+| 2026-07-15 | Content-Schemata erst mit ADR-0003 finalisieren; Suchtechnik erst nach den Schemata entscheiden (ADR-0004). | Reihenfolge-Vorgabe des Auftraggebers |
+| 2026-07-15 | Vorläufiges Löschkonzept, Platzhalter-Regel für Rechtstexte, vorläufige Review-Rollen. | Vorgaben des Auftraggebers; `security-and-privacy-rules.md` §5.1–5.3 — juristisch zu prüfen vor Produktivstart |
+| 2026-07-15 | **ADR-0002 bestätigt (Accepted):** Astro + Svelte-Islands + Node-Adapter; Scalingo als Zielarchitektur (technisch akzeptiert, Anbieter rechtlich **nicht** freigegeben); H1–H7 als verpflichtende Produktivstart-Gates; Fallback-Reihenfolge Scalingo → Scaleway → Hetzner VM; nur stabile Framework-Versionen (Lockfile); keine automatische Produktion. | Entscheidung des Auftraggebers; `docs/adr/0002-framework-hosting.md` |
+| 2026-07-15 | Zweitsicherung: Hetzner Object Storage als bevorzugter Kandidat — geplante, nicht aktivierte Produktionsanforderung. | Entscheidung des Auftraggebers; Aktivierungsbedingungen in ADR-0002 |
+| 2026-07-15 | E-Mail: Scaleway TEM bleibt Kandidat; Auswahl zurückgestellt bis Prüfung (H7); keine Integration, kein Vertrag. | Entscheidung des Auftraggebers |

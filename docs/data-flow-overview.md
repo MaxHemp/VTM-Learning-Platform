@@ -177,8 +177,8 @@ flowchart LR
 
 | # | Punkt | Referenz |
 |---|---|---|
-| DF1 | Aufbewahrung des Zertifikatsdatensatzes nach Kontolöschung | L2, E7 — juristisch prüfen |
-| DF2 | Log-Aufbewahrungsdauer final festlegen (Vorschlag 7–14 Tage) | L2 |
-| DF3 | Backup-Aufbewahrung und Löschung aus Backups | L2, NFR-F2 |
-| DF4 | Konkrete Hosting- und E-Mail-Anbieter inkl. AV-Verträge | T5, V3, F4 |
-| DF5 | Inaktive Konten: automatische Löschfrist? | L2 — ENTSCHEIDUNG AUFTRAGGEBER |
+| DF1 | Aufbewahrung des Zertifikatsdatensatzes nach Kontolöschung | L2, E7 — bleibt reviewpflichtig (Vorgabe Auftraggeber 2026-07-15); Datenmodell muss Löschung, Anonymisierung, Deaktivierung und Zertifikats-Widerruf unterstützen |
+| DF2 | Log-Aufbewahrung | **Vorläufig 2026-07-15:** Sicherheitslogs ≤ 14 Tage (länger nur bei dokumentiertem Vorfall); keine Prompts/Freitexte/Zugangsdaten in Anwendungslogs — juristisch zu prüfen |
+| DF3 | Backup-Aufbewahrung | **Vorläufig 2026-07-15:** ≤ 30 Tage — juristisch zu prüfen |
+| DF4 | Konkrete Hosting- und E-Mail-Anbieter inkl. AV-Verträge | T5, V3, F4 — Vergleich in `docs/hosting-comparison.md`, Entscheidung ADR-0002 |
+| DF5 | Inaktive Konten | **Vorläufig 2026-07-15:** Löschprüfung nach 24 Monaten — juristisch zu prüfen |

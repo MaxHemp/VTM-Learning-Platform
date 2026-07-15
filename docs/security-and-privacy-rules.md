@@ -116,12 +116,58 @@ Diese Anforderungen fließen in die technische Architektur ein:
 - **Transparenz:** Datenschutzerklärung mit Verarbeitungszwecken,
   Rechtsgrundlagen, Speicherdauern; verständlich formuliert.
 - **Löschkonzept:** Speicher- und Löschfristen werden vor Implementierung
-  definiert.
+  definiert. Vorläufige Eckwerte siehe Abschnitt 5.1.
 - **Auftragsverarbeitung:** Externe Dienste (Hosting, Analytics, KI-APIs)
   nur mit AV-Vertrag und Prüfung von Drittlandtransfers.
 - **Tracking:** Kein Tracking ohne Rechtsgrundlage; Reichweitenmessung
   möglichst datensparsam.
 - Offene Datenschutzentscheidungen: siehe `docs/open-questions.md`.
+
+### 5.1 Vorläufiges Löschkonzept
+
+**Status: VORLÄUFIG (Vorgabe des Auftraggebers, 2026-07-15) —
+juristisch zu prüfen vor Produktivstart. REVIEW ERFORDERLICH: Regulatorik.**
+
+- **Technische Sicherheitslogs:** maximal **14 Tage**, sofern kein
+  dokumentierter Sicherheitsvorfall eine längere Aufbewahrung erfordert.
+- **Anwendungslogs:** keine Lernprompts, keine Übungsfreitexte, keine
+  Zugangsdaten, keine sensiblen Inhalte in Anwendungslogs.
+- **Backups:** vorläufig maximal **30 Tage** Aufbewahrung.
+- **Inaktive Nutzerkonten:** Löschprüfung nach **24 Monaten** Inaktivität.
+- **Kontolöschung:** Nutzerinnen und Nutzer müssen eine Kontolöschung
+  anfordern können (Selbstbedienung gemäß FR-16.5).
+- **Zertifikatsdaten nach Kontolöschung:** Umgang bleibt reviewpflichtig
+  (offene Frage DF1/L2); keine Vorwegnahme durch die Implementierung.
+- **Technische Anforderung an das Datenmodell:** Löschung, Anonymisierung,
+  Deaktivierung und **Widerruf eines Zertifikats** müssen technisch
+  unterstützt werden.
+
+### 5.2 Rechtstexte (vorläufige Regelung)
+
+**Status: VORLÄUFIG (Vorgabe des Auftraggebers, 2026-07-15).**
+
+- Impressum, Datenschutzerklärung und ggf. AGB **blockieren den
+  Produktivstart**, aber nicht die lokale Entwicklung.
+- Bis zur juristischen Freigabe werden ausschließlich **klar
+  gekennzeichnete Platzhalter** verwendet (z. B.
+  „PLATZHALTER — RECHTSTEXT NICHT FREIGEGEBEN“).
+- KI-generierte Rechtstexte werden **niemals** als final oder rechtlich
+  freigegeben dargestellt.
+
+### 5.3 Review-Rollen (vorläufig, bis Personen benannt sind)
+
+**Status: VORLÄUFIG (Vorgabe des Auftraggebers, 2026-07-15).**
+
+| Rolle | Zuständigkeit |
+|---|---|
+| Editorial Reviewer | Redaktionsleitfaden, Tonalität, Didaktik-Struktur |
+| Insurance Subject-Matter Reviewer | Fachliche Korrektheit (Versicherung) |
+| Legal/Regulatory Reviewer | Alle Inhalte mit `REVIEW ERFORDERLICH: Regulatorik`, Rechtstexte, Zertifikatstext |
+| Privacy/Security Reviewer | Datenschutz-/Sicherheitsrelevante Inhalte, Datenmodell-Änderungen, Threat-Model-Pflege |
+
+Ohne die jeweilige **menschliche** Freigabe dürfen fachlich oder
+regulatorisch kritische Inhalte nicht veröffentlicht werden. Die
+Benennung konkreter Personen steht aus (offene Frage R1/R2).
 
 ## 6. Praktische Übungen mit KI-Tools
 
